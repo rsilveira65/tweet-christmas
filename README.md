@@ -1,4 +1,4 @@
-# tweet-christmas
+How to blink your Christmas tree based on sentiment analysis.
 
 ## Project Setup
 ```bash
