@@ -9,7 +9,9 @@ const argumentService = require('../services/argumentService');
 /**
  * Node Modules
  */
-var sleep = require('sleep');
+const sleep = require('sleep');
+const emoji = require('node-emoji');
+
 require('dotenv').config()
 
 const run = async () => {
@@ -22,16 +24,26 @@ const run = async () => {
 
     stream.on('error', error => logService.logError(error));
 
-    stream.on('data', event => {
-        console.log(event && event.text);
-        
+    stream.on('data', async tweet => {
+
         //Sentiment Analysis 
-        console.dir(
-            sentimentService.analyze(
-                event.text,
-                options.language ? options.language : process.env.LANGUAGE,
-            )
-        );
+        const analysis = await sentimentService.analyze(
+            tweet.text,
+            options.language ? options.language : process.env.LANGUAGE,
+        )
+                
+        emojiScore = 'neutral_face';
+        if (analysis.score < 0) {
+            emojiScore = 'confused';
+        } else if (analysis.score > 0) {
+            emojiScore = 'smiley';
+        }
+
+        console.log(emoji.get(emojiScore));
+        console.log(`@${tweet.user.screen_name}`);
+
+        console.log(tweet && tweet.text);
+        console.dir(analysis);
 
         sleep.sleep(Number(options.sleep ? options.sleep : process.env.SLEEP_TIME));
 

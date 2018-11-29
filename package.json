@@ -17,11 +17,13 @@
   },
   "homepage": "https://github.com/rsilveira65/tweet-christmasr#readme",
   "dependencies": {
+    "colors": "^1.3.2",
     "command-line-args": "^5.0.2",
     "dotenv": "^6.1.0",
     "log4js": "^3.0.5",
     "ml-sentiment": "^2.0.7",
     "node-cron": "^2.0.1",
+    "node-emoji": "^1.8.1",
     "sentiment": "^5.0.1",
     "sentiment-ptbr": "^1.0.3",
     "sleep": "^5.2.3",
