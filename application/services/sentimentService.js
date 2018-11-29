@@ -1,7 +1,6 @@
 /**
  * Node Modules
  */
-// const Sentiment = require('sentiment');
 const sentiment = require('sentiment-ptbr');
 const SentimentEn = require('sentiment');
 

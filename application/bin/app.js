@@ -17,17 +17,15 @@ const run = async () => {
 
     console.dir(options);
 
-    const stream = await twitterService.getStream(
-        options.word ? options.word : process.env.TRACKING_WORD,
-    );
+    //Twitter Stream
+    const stream = await twitterService.getStream(options.word ? options.word : process.env.TRACKING_WORD);
 
-    stream.on('error', error => {
-        logService.logError(error);
-    });
+    stream.on('error', error => logService.logError(error));
 
     stream.on('data', event => {
         console.log(event && event.text);
-
+        
+        //Sentiment Analysis 
         console.dir(
             sentimentService.analyze(
                 event.text,
