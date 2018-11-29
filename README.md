@@ -1,4 +1,4 @@
-How to blink your Christmas tree based on sentiment analysis.
+# How to blink your Christmas tree based on sentiment analysis.
 
 ## Project Setup
 ```bash
