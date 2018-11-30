@@ -1,10 +1,10 @@
 /**
  * Local Modules
  */
-const twitterService = require('../services/twitterService');
-const sentimentService = require('../services/sentimentService');
-const logService = require('../services/logService');
-const argumentService = require('../services/argumentService');
+const twitterService = require('../services/twitter/twitterService');
+const sentimentService = require('../services/sentiment/sentimentService');
+const logService = require('../services/log/logService');
+const commandService = require('../services/command/commandService');
 
 /**
  * Node Modules
@@ -15,7 +15,7 @@ const emoji = require('node-emoji');
 require('dotenv').config()
 
 const run = async () => {
-    const options = await argumentService.handleInputs();
+    const options = await commandService.handleInputs();
 
     console.dir(options);
 
@@ -34,7 +34,7 @@ const run = async () => {
                 
         emojiScore = 'neutral_face';
         if (analysis.score < 0) {
-            emojiScore = 'confused';
+            emojiScore = 'gun';
         } else if (analysis.score > 0) {
             emojiScore = 'smiley';
         }
@@ -49,6 +49,6 @@ const run = async () => {
 
         console.log("\n\n");
     });
-};
+}; 
 
 module.exports = { run };
