@@ -4,7 +4,7 @@
 const log4js = require('log4js');
 
 log4js.configure({
-    appenders: { application: { type: 'file', filename: __dirname + '/../logs/application.log' } },
+    appenders: { application: { type: 'file', filename: __dirname + '/../../logs/application.log' } },
     categories: { default: { appenders: ['application'], level: 'info' } }
 });
 
