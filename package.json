@@ -24,6 +24,7 @@
     "ml-sentiment": "^2.0.7",
     "node-cron": "^2.0.1",
     "node-emoji": "^1.8.1",
+    "rpi-gpio": "^2.1.2",
     "sentiment": "^5.0.1",
     "sentiment-ptbr": "^1.0.3",
     "sleep": "^5.2.3",

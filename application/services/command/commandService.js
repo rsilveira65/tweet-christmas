@@ -12,7 +12,6 @@ const handleInputs = () => {
         { name: 'language', alias: 'l', type: String },
         { name: 'sleep', alias: 's', type: Number }
     ];
-
     
     return commandLineArgs(optionDefinitions);
 };

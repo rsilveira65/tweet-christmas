@@ -5,6 +5,8 @@ const twitterService = require('../services/twitter/twitterService');
 const sentimentService = require('../services/sentiment/sentimentService');
 const logService = require('../services/log/logService');
 const commandService = require('../services/command/commandService');
+const blinkService = require('../services/raspberry/blinkService');
+
 
 /**
  * Node Modules
@@ -31,13 +33,18 @@ const run = async () => {
             tweet.text,
             options.language ? options.language : process.env.LANGUAGE,
         )
-                
+        
         emojiScore = 'neutral_face';
+        pin = Number(process.env.GREEN_PIN);
+        
         if (analysis.score < 0) {
             emojiScore = 'gun';
+            pin = Number(process.env.RED_PIN);
         } else if (analysis.score > 0) {
             emojiScore = 'smiley';
         }
+
+        blinkService.blink(pin);
 
         console.log(emoji.get(emojiScore));
         console.log(`@${tweet.user.screen_name}`);
