@@ -1,4 +1,6 @@
 #!/bin/bash
+
+cd scripts
 versionFile="version.txt"
 
 git checkout raspberry-deploy
