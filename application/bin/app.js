@@ -44,7 +44,7 @@ const run = async () => {
             emojiScore = 'smiley';
         }
 
-        blinkService.blink(pin);
+        //blinkService.blink(pin);
 
         console.log(emoji.get(emojiScore));
         console.log(`@${tweet.user.screen_name}`);
