@@ -1,5 +1,5 @@
 ESLINT=./node_modules/.bin/eslint
-TAP=./node_modules/.bin/tape
+TAPE=./node_modules/.bin/tape
 
 # ------------------------------------------------------------------------------
 
@@ -9,12 +9,12 @@ lint:
 
 test:
 	@make lint
-	$(TAP) ./tests/*.js
+	$(TAPE) ./tests/*.js
 
 # ------------------------------------------------------------------------------
 
 coverage:
-	$(TAP) ./tests/*.js --coverage --coverage-report=lcov
+	$(TAPE) ./tests/*.js --coverage --coverage-report=lcov
 
 # ------------------------------------------------------------------------------
 
