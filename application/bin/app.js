@@ -5,7 +5,7 @@ const twitterService = require('../services/twitter/twitterService');
 const sentimentService = require('../services/sentiment/sentimentService');
 const logService = require('../services/log/logService');
 const commandService = require('../services/command/commandService');
-const blinkService = require('../services/raspberry/blinkService');
+// const blinkService = require('../services/raspberry/blinkService');
 
 
 /**

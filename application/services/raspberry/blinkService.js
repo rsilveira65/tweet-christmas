@@ -1,8 +1,8 @@
 /**
  * Node Modules
  */
-const gpio = require('rpi-gpio');
-const gpiop = gpio.promise;
+// const gpio = require('rpi-gpio');
+// const gpiop = gpio.promise;
 require('dotenv').config();
 
 /**
