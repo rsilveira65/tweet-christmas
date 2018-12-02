@@ -5,7 +5,7 @@ const twitterService = require('../services/twitter/twitterService');
 const sentimentService = require('../services/sentiment/sentimentService');
 const logService = require('../services/log/logService');
 const commandService = require('../services/command/commandService');
-const blinkService = require('../services/raspberry/blinkService');
+// const blinkService = require('../services/raspberry/blinkService');
 
 
 /**
@@ -14,7 +14,7 @@ const blinkService = require('../services/raspberry/blinkService');
 const sleep = require('sleep');
 const emoji = require('node-emoji');
 
-require('dotenv').config()
+require('dotenv').config();
 
 const run = async () => {
     const options = await commandService.handleInputs();
@@ -22,7 +22,9 @@ const run = async () => {
     console.dir(options);
 
     //Twitter Stream
-    const stream = await twitterService.getStream(options.word ? options.word : process.env.TRACKING_WORD);
+    const stream = await twitterService.getStream(
+        options.word ? options.word : process.env.TRACKING_WORD
+    );
 
     stream.on('error', error => logService.logError(error));
 
@@ -32,7 +34,7 @@ const run = async () => {
         const analysis = await sentimentService.analyze(
             tweet.text,
             options.language ? options.language : process.env.LANGUAGE,
-        )
+        );
         
         emojiScore = 'neutral_face';
         pin = Number(process.env.GREEN_PIN);
@@ -54,7 +56,7 @@ const run = async () => {
 
         sleep.sleep(Number(options.sleep ? options.sleep : process.env.SLEEP_TIME));
 
-        console.log("\n\n");
+        console.log('\n\n');
     });
 }; 
 
