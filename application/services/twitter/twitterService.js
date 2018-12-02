@@ -2,7 +2,7 @@
  * Node Modules
  */
 const Twitter = require('twitter');
-require('dotenv').config()
+require('dotenv').config();
 
 const getStream = async trackingWord => {
     const client = new Twitter({
