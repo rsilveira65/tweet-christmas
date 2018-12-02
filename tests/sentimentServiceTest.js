@@ -1,6 +1,11 @@
 const test = require('tape');
+const tapSpec = require('tap-spec');
 
 const sentimentService = require('../application/services/sentiment/sentimentService');
+
+test.createStream()
+    .pipe(tapSpec())
+    .pipe(process.stdout);
 
 test('sentimentService test', async t => {
     t.plan(5);

@@ -29,6 +29,7 @@
     "sentiment": "^5.0.1",
     "sentiment-ptbr": "^1.0.3",
     "sleep": "^5.2.3",
+    "tap-spec": "^5.0.0",
     "tape": "^4.9.1",
     "twitter": "^1.7.1",
     "yamljs": "^0.3.0"
