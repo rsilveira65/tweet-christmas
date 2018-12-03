@@ -9,15 +9,40 @@
 $ npm install
 ```
 
+Create the environment file.
 ```bash
-$ cp .dist.env .env
+$ cp .env.dist .env
+```
+```
+cat .env
+
+CONSUMER_KEY = YourConsumerKey
+CONSUMER_SECRET = YourConsumerSecret
+ACCESS_TOKEN_KEY = YourAccessTokenKey
+ACCESS_TOKEN_SECRET = YourAccessTokenSecret
+
+TRACKING_WORD = natal
+SLEEP_TIME = 2
+LANGUAGE = br
+
+RED_PIN = 3
+GREEN_PIN = 4
 ```
 
 ## RUN
 Example:
 
 ```bash
-$ node index.js --word natal --language br --sleep 5
+$ node index.js --word christmas --language en --sleep 5
+```
+It will open and twitter stream and retrieves all "Christmas" mentions.
+In addition, it will perform a sentiment analyze (en).
+
+## Unit Tests
+Get unit test summary on executing
+
+```sh
+make tests
 ```
 
 ## Raspberry Config
