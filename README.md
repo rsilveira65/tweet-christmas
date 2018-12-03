@@ -42,7 +42,7 @@ In addition, it will perform a sentiment analyze (en).
 Get unit test summary on executing
 
 ```sh
-make tests
+$ make tests
 ```
 
 ## Raspberry Config
